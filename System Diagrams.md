@@ -1,0 +1,220 @@
+# Unnamed CodeViz Diagram
+
+```mermaid
+graph TD
+
+    subgraph e4e2ec29-KarmicDDCodebase["**KarmicDD Codebase**<br>Overall System Architecture<br>[External]"]
+        subgraph e4e2ec29-Backend["**Backend**<br>Core application logic, API services, data persistence<br>[External]"]
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"]
+            subgraph e4e2ec29-BackendCoreFunctions["**Core Backend Functions**<br>Key responsibilities<br>[External]"]
+                e4e2ec29-BCF1["**API Services**<br>Exposes RESTful APIs<br>[External]"]
+                e4e2ec29-BCF2["**Data Persistence**<br>Manages data storage<br>[External]"]
+                e4e2ec29-BCF3["**Authentication/Authorization**<br>User access control<br>[External]"]
+                e4e2ec29-BCF4["**Business Processes**<br>Core application logic<br>[External]"]
+                e4e2ec29-BCF5["**External Integrations**<br>Third-party service communication<br>[External]"]
+            end
+            subgraph e4e2ec29-BackendTechnologies["**Backend Technologies**<br>Frameworks and Libraries<br>[External]"]
+                e4e2ec29-BT1["**Node.js**<br>Server-side JavaScript runtime<br>[Technology]"]
+                e4e2ec29-BT10["**Multer**<br>File upload handling<br>[Technology]"]
+                e4e2ec29-BT11["**SendGrid**<br>Email service integration<br>[External]"]
+                e4e2ec29-BT12["**PhonePe SDK**<br>Payment gateway integration<br>[External]"]
+                e4e2ec29-BT13["**Swagger**<br>API Documentation<br>[Tool]"]
+                e4e2ec29-BT14["**@google/generative-ai**<br>AI-driven analysis<br>[External]"]
+                e4e2ec29-BT2["**Express.js**<br>Web application framework<br>[Technology]"]
+                e4e2ec29-BT3["**Prisma ORM**<br>Database toolkit<br>[Technology]"]
+                e4e2ec29-BT4["**Mongoose**<br>MongoDB object modeling<br>[Technology]"]
+                e4e2ec29-BT5["**Passport.js**<br>Authentication middleware<br>[Technology]"]
+                e4e2ec29-BT6["**JWT**<br>JSON Web Tokens for session<br>[Technology]"]
+                e4e2ec29-BT7["**bcrypt**<br>Password hashing<br>[Technology]"]
+                e4e2ec29-BT8["**Helmet**<br>Security middleware<br>[Technology]"]
+                e4e2ec29-BT9["**express-rate-limit**<br>Rate limiting middleware<br>[Technology]"]
+            end
+            subgraph e4e2ec29-Databases["**Data Persistence**<br>Relational and Document Databases<br>[External]"]
+                e4e2ec29-D1["**PostgreSQL**<br>Relational data<br>[Database]"]
+                e4e2ec29-D2["**MongoDB**<br>Flexible document data<br>[Database]"]
+            end
+            %% Edges at this level (grouped by source)
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Uses"| e4e2ec29-BT1["**Node.js**<br>Server-side JavaScript runtime<br>[Technology]"]
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Uses"| e4e2ec29-BT2["**Express.js**<br>Web application framework<br>[Technology]"]
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Interacts with"| e4e2ec29-D1["**PostgreSQL**<br>Relational data<br>[Database]"]
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Interacts with"| e4e2ec29-D2["**MongoDB**<br>Flexible document data<br>[Database]"]
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Provides"| e4e2ec29-BCF1["**API Services**<br>Exposes RESTful APIs<br>[External]"]
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Handles"| e4e2ec29-BCF2["**Data Persistence**<br>Manages data storage<br>[External]"]
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Manages"| e4e2ec29-BCF3["**Authentication/Authorization**<br>User access control<br>[External]"]
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Executes"| e4e2ec29-BCF4["**Business Processes**<br>Core application logic<br>[External]"]
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Orchestrates"| e4e2ec29-BCF5["**External Integrations**<br>Third-party service communication<br>[External]"]
+            e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Documents APIs with"| e4e2ec29-BT13["**Swagger**<br>API Documentation<br>[Tool]"]
+            e4e2ec29-BCF2["**Data Persistence**<br>Manages data storage<br>[External]"] -->|"Uses"| e4e2ec29-BT3["**Prisma ORM**<br>Database toolkit<br>[Technology]"]
+            e4e2ec29-BCF2["**Data Persistence**<br>Manages data storage<br>[External]"] -->|"Uses"| e4e2ec29-BT4["**Mongoose**<br>MongoDB object modeling<br>[Technology]"]
+            e4e2ec29-BCF3["**Authentication/Authorization**<br>User access control<br>[External]"] -->|"Uses"| e4e2ec29-BT5["**Passport.js**<br>Authentication middleware<br>[Technology]"]
+            e4e2ec29-BCF3["**Authentication/Authorization**<br>User access control<br>[External]"] -->|"Uses"| e4e2ec29-BT6["**JWT**<br>JSON Web Tokens for session<br>[Technology]"]
+            e4e2ec29-BCF3["**Authentication/Authorization**<br>User access control<br>[External]"] -->|"Uses"| e4e2ec29-BT7["**bcrypt**<br>Password hashing<br>[Technology]"]
+            e4e2ec29-BCF3["**Authentication/Authorization**<br>User access control<br>[External]"] -->|"Uses"| e4e2ec29-BT8["**Helmet**<br>Security middleware<br>[Technology]"]
+            e4e2ec29-BCF3["**Authentication/Authorization**<br>User access control<br>[External]"] -->|"Uses"| e4e2ec29-BT9["**express-rate-limit**<br>Rate limiting middleware<br>[Technology]"]
+            e4e2ec29-BCF5["**External Integrations**<br>Third-party service communication<br>[External]"] -->|"Integrates"| e4e2ec29-BT11["**SendGrid**<br>Email service integration<br>[External]"]
+            e4e2ec29-BCF5["**External Integrations**<br>Third-party service communication<br>[External]"] -->|"Integrates"| e4e2ec29-BT12["**PhonePe SDK**<br>Payment gateway integration<br>[External]"]
+            e4e2ec29-BCF5["**External Integrations**<br>Third-party service communication<br>[External]"] -->|"Integrates"| e4e2ec29-BT14["**@google/generative-ai**<br>AI-driven analysis<br>[External]"]
+        end
+        subgraph e4e2ec29-ComplexitiesDesignDecisions["**Complexities and Design Decisions**<br>Managing intricate system aspects<br>[External]"]
+            subgraph e4e2ec29-DocumentProcessingPipeline["**Document Processing Pipeline**<br>Dual modes, OCR, AI integration<br>[External]"]
+                e4e2ec29-DPP1["**Dual Document Processing Modes**<br>Direct file vs. OCR-based<br>[External]"]
+                e4e2ec29-DPP2["**Memory-Based OCR**<br>Chunking and Adaptive Retries<br>[External]"]
+                e4e2ec29-DPP3["**AI Integration**<br>AI-driven analysis via Google Generative AI<br>[External]"]
+                e4e2ec29-DPP4["**GeminiFileRegistry**<br>Manages files for LLM interactions<br>[External]"]
+                %% Edges at this level (grouped by source)
+                e4e2ec29-DPP1["**Dual Document Processing Modes**<br>Direct file vs. OCR-based<br>[External]"] -->|"Utilizes"| e4e2ec29-DPP2["**Memory-Based OCR**<br>Chunking and Adaptive Retries<br>[External]"]
+                e4e2ec29-DPP2["**Memory-Based OCR**<br>Chunking and Adaptive Retries<br>[External]"] -->|"Feeds into"| e4e2ec29-DPP3["**AI Integration**<br>AI-driven analysis via Google Generative AI<br>[External]"]
+                e4e2ec29-DPP3["**AI Integration**<br>AI-driven analysis via Google Generative AI<br>[External]"] -->|"Uses"| e4e2ec29-DPP4["**GeminiFileRegistry**<br>Manages files for LLM interactions<br>[External]"]
+            end
+            subgraph e4e2ec29-ExternalIntegrationsC["**External Integrations**<br>Third-party APIs and dependencies<br>[External]"]
+                e4e2ec29-EIC1["**Third-Party APIs**<br>SendGrid, PhonePe, Google Gemini<br>[External]"]
+            end
+            subgraph e4e2ec29-OverallDesignPhilosophy["**Overall Design Philosophy**<br>Guiding principles<br>[External]"]
+                e4e2ec29-ODP1["**Cost Optimization**<br>Managing resource-intensive ops (OCR, AI)<br>[External]"]
+                e4e2ec29-ODP2["**Data Consistency**<br>Across data stores and job processing<br>[External]"]
+                e4e2ec29-ODP3["**Secure User Experience**<br>Auth, AuthZ, vulnerability protection<br>[External]"]
+            end
+            subgraph e4e2ec29-RobustJobManagement["**Robust Job Management**<br>Tracking and deduplication of analytical jobs<br>[External]"]
+                e4e2ec29-RJM1["**In-Memory Job Registry**<br>Tracks long-running analytical jobs<br>[External]"]
+            end
+            subgraph e4e2ec29-StringentSecurityMeasures["**Stringent Security Measures**<br>Protection against attacks and fraud<br>[External]"]
+                e4e2ec29-SSM1["**JWT-based CSRF Protection**<br>With token rotation<br>[External]"]
+                e4e2ec29-SSM2["**Zero-Trust Payment Verification**<br>Server-side validation for PhonePe<br>[External]"]
+            end
+        end
+        subgraph e4e2ec29-Frontend["**Frontend**<br>User interface and user experience<br>[External]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"]
+            subgraph e4e2ec29-FrontendFeatures["**Key Frontend Features**<br>User-facing functionalities<br>[External]"]
+                e4e2ec29-FF1["**Display/Generate PDFs/Images**<br>Visual content presentation<br>[External]"]
+                e4e2ec29-FF2["**Rich UI Components**<br>Interactive user interface elements<br>[External]"]
+                e4e2ec29-FF3["**Notifications/Tooltips**<br>User feedback and guidance<br>[External]"]
+            end
+            subgraph e4e2ec29-FrontendTechnologies["**Frontend Technologies**<br>Frameworks and Libraries<br>[External]"]
+                e4e2ec29-FT1["**React**<br>UI library<br>[Technology]"]
+                e4e2ec29-FT2["**Vite**<br>Build tool/Bundler<br>[Technology]"]
+                e4e2ec29-FT3["**Tailwind CSS**<br>Utility-first CSS framework<br>[Technology]"]
+                e4e2ec29-FT4["**React Router DOM**<br>Declarative routing<br>[Technology]"]
+                e4e2ec29-FT5["**Framer Motion**<br>Animation library<br>[Technology]"]
+                e4e2ec29-FT6["**GSAP**<br>Animation library<br>[Technology]"]
+                e4e2ec29-FT7["**Chart.js**<br>Data visualization<br>[Technology]"]
+                e4e2ec29-FT8["**Axios**<br>HTTP client<br>[Technology]"]
+            end
+            %% Edges at this level (grouped by source)
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Uses"| e4e2ec29-FT1["**React**<br>UI library<br>[Technology]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Bundled by"| e4e2ec29-FT2["**Vite**<br>Build tool/Bundler<br>[Technology]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Styled with"| e4e2ec29-FT3["**Tailwind CSS**<br>Utility-first CSS framework<br>[Technology]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Manages routes with"| e4e2ec29-FT4["**React Router DOM**<br>Declarative routing<br>[Technology]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Animates with"| e4e2ec29-FT5["**Framer Motion**<br>Animation library<br>[Technology]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Animates with"| e4e2ec29-FT6["**GSAP**<br>Animation library<br>[Technology]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Visualizes data with"| e4e2ec29-FT7["**Chart.js**<br>Data visualization<br>[Technology]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Implements"| e4e2ec29-FF1["**Display/Generate PDFs/Images**<br>Visual content presentation<br>[External]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Provides"| e4e2ec29-FF2["**Rich UI Components**<br>Interactive user interface elements<br>[External]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Provides"| e4e2ec29-FF3["**Notifications/Tooltips**<br>User feedback and guidance<br>[External]"]
+            e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Communicates via"| e4e2ec29-FT8["**Axios**<br>HTTP client<br>[Technology]"]
+        end
+        subgraph e4e2ec29-Monitoring["**Monitoring**<br>Manages and monitors Node.js applications<br>[External]"]
+            e4e2ec29-M1["**Monitoring Dashboard**<br>Real-time metrics visualization<br>[External]"]
+            subgraph e4e2ec29-MonitoringFeatures["**Key Monitoring Features**<br>Observability and Management<br>[External]"]
+                e4e2ec29-MF1["**Real-time CPU/RAM Usage**<br>Live performance display<br>[External]"]
+                e4e2ec29-MF2["**Metric Collection**<br>Scheduled data aggregation into JSON<br>[External]"]
+                e4e2ec29-MF3["**Application Process Management**<br>Start, stop, restart Node.js apps<br>[External]"]
+            end
+            subgraph e4e2ec29-MonitoringTechnologies["**Monitoring Technologies**<br>Tools and Libraries<br>[External]"]
+                e4e2ec29-MT1["**PM2**<br>Process Manager for Node.js<br>[Technology]"]
+                e4e2ec29-MT2["**Express.js**<br>Dashboard web server<br>[Technology]"]
+                e4e2ec29-MT3["**Socket.IO**<br>Real-time bidirectional communication<br>[Technology]"]
+                e4e2ec29-MT4["**node-cron**<br>Scheduled metric collection<br>[Technology]"]
+                e4e2ec29-MT5["**Chart.js**<br>Data visualization<br>[Technology]"]
+            end
+            %% Edges at this level (grouped by source)
+            e4e2ec29-M1["**Monitoring Dashboard**<br>Real-time metrics visualization<br>[External]"] -->|"Uses"| e4e2ec29-MT2["**Express.js**<br>Dashboard web server<br>[Technology]"]
+            e4e2ec29-M1["**Monitoring Dashboard**<br>Real-time metrics visualization<br>[External]"] -->|"Enables real-time with"| e4e2ec29-MT3["**Socket.IO**<br>Real-time bidirectional communication<br>[Technology]"]
+            e4e2ec29-M1["**Monitoring Dashboard**<br>Real-time metrics visualization<br>[External]"] -->|"Visualizes with"| e4e2ec29-MT5["**Chart.js**<br>Data visualization<br>[Technology]"]
+            e4e2ec29-M1["**Monitoring Dashboard**<br>Real-time metrics visualization<br>[External]"] -->|"Displays"| e4e2ec29-MF1["**Real-time CPU/RAM Usage**<br>Live performance display<br>[External]"]
+            e4e2ec29-M1["**Monitoring Dashboard**<br>Real-time metrics visualization<br>[External]"] -->|"Utilizes"| e4e2ec29-MF2["**Metric Collection**<br>Scheduled data aggregation into JSON<br>[External]"]
+            e4e2ec29-MT1["**PM2**<br>Process Manager for Node.js<br>[Technology]"] -->|"Manages"| e4e2ec29-MF3["**Application Process Management**<br>Start, stop, restart Node.js apps<br>[External]"]
+            e4e2ec29-MT4["**node-cron**<br>Scheduled metric collection<br>[Technology]"] -->|"Schedules"| e4e2ec29-MF2["**Metric Collection**<br>Scheduled data aggregation into JSON<br>[External]"]
+        end
+        subgraph e4e2ec29-SystemDesign["**System Design Principles and Scalability Mechanisms**<br>Robustness, Performance, Scalability<br>[External]"]
+            subgraph e4e2ec29-AsyncProcessing["**Asynchronous Processing**<br>Handling long-running tasks<br>[External]"]
+                e4e2ec29-AP1["**In-Memory Job Registry**<br>Tracks job status (queued, processing, etc.)<br>finJobRegistry|jobRegistry"]
+                e4e2ec29-AP2["**Client Polling**<br>Status updates for long-running jobs<br>/jobs/:jobId/status"]
+                e4e2ec29-AP3["**Job Deduplication**<br>Prevents redundant processing<br>finJobKeyToId"]
+                e4e2ec29-AP4["**202 Accepted Response**<br>Immediate response for async ops<br>[External]"]
+                %% Edges at this level (grouped by source)
+                e4e2ec29-AP4["**202 Accepted Response**<br>Immediate response for async ops<br>[External]"] -->|"Returns jobId for"| e4e2ec29-AP2["**Client Polling**<br>Status updates for long-running jobs<br>/jobs/:jobId/status"]
+                e4e2ec29-AP1["**In-Memory Job Registry**<br>Tracks job status (queued, processing, etc.)<br>finJobRegistry|jobRegistry"] -->|"Tracks status for"| e4e2ec29-AP2["**Client Polling**<br>Status updates for long-running jobs<br>/jobs/:jobId/status"]
+                e4e2ec29-AP3["**Job Deduplication**<br>Prevents redundant processing<br>finJobKeyToId"] -->|"Optimizes resource usage for"| e4e2ec29-AP1["**In-Memory Job Registry**<br>Tracks job status (queued, processing, etc.)<br>finJobRegistry|jobRegistry"]
+            end
+            subgraph e4e2ec29-ConcurrencyParallelism["**Concurrency and Parallelism**<br>Efficient resource utilization<br>[External]"]
+                e4e2ec29-CP1["**In-Process Worker Functions**<br>Configurable concurrency within Node.js<br>DirectGeminiFileAttachmentService.ts"]
+                e4e2ec29-CP2["**Event Queuing and Batch Processing**<br>Asynchronous handling of user events<br>UserJourneyService.ts"]
+            end
+            subgraph e4e2ec29-DataManagement["**Data Management and Persistence**<br>Optimized data storage<br>[External]"]
+                e4e2ec29-DM1["**Polyglot Persistence**<br>PostgreSQL and MongoDB for different data types<br>[External]"]
+                e4e2ec29-DM2["**Prisma Migrations**<br>Database schema evolvability<br>[Tool]"]
+            end
+            subgraph e4e2ec29-FutureDistributedCoordination["**Future Distributed Coordination (Recommendation)**<br>Enabling true horizontal scaling<br>[External]"]
+                e4e2ec29-FDC1["**Distributed Task Queue**<br>e.g., Redis, RabbitMQ<br>[Proposed]"]
+                e4e2ec29-FDC2["**Distributed Cache / DB**<br>e.g., Redis, PostgreSQL advisory locks<br>[Proposed]"]
+            end
+            subgraph e4e2ec29-HorizontalScalingLimitations["**Limitations for Horizontal Scalability (Current State)**<br>In-memory state issues<br>[External]"]
+                e4e2ec29-HSL1["**In-memory Job Registries**<br>Not suitable for multi-instance deployments<br>finJobRegistry|jobRegistry"]
+                e4e2ec29-HSL2["**Duplicated Work / Inconsistent Status**<br>Consequence of in-memory state across instances<br>[External]"]
+                %% Edges at this level (grouped by source)
+                e4e2ec29-HSL1["**In-memory Job Registries**<br>Not suitable for multi-instance deployments<br>finJobRegistry|jobRegistry"] -->|"Leads to"| e4e2ec29-HSL2["**Duplicated Work / Inconsistent Status**<br>Consequence of in-memory state across instances<br>[External]"]
+            end
+            subgraph e4e2ec29-MonitoringObservability["**Monitoring and Observability**<br>Insights into performance<br>[External]"]
+                e4e2ec29-MO1["**Metrics Collection**<br>Custom middlewares (countRequest, trackTime, logger)<br>[External]"]
+                e4e2ec29-MO2["**Load Balancer Readiness**<br>'trust proxy' setting<br>app.ts"]
+                e4e2ec29-MO3["**Load Balancer**<br>Distributes traffic<br>[External]"]
+                %% Edges at this level (grouped by source)
+                e4e2ec29-MO2["**Load Balancer Readiness**<br>'trust proxy' setting<br>app.ts"] -->|"Enables horizontal scaling via"| e4e2ec29-MO3["**Load Balancer**<br>Distributes traffic<br>[External]"]
+            end
+            subgraph e4e2ec29-RobustnessSecurity["**Robustness and Security**<br>Stability, availability, protection<br>[External]"]
+                e4e2ec29-RS1["**Rate Limiting**<br>Protects API endpoints from abuse<br>express-rate-limit"]
+                e4e2ec29-RS2["**Graceful Shutdown**<br>Ensures completion of ongoing ops<br>server.ts"]
+                e4e2ec29-RS3["**Comprehensive Security Middleware**<br>Helmet, input sanitization, NoSQL injection<br>[External]"]
+            end
+            %% Edges at this level (grouped by source)
+            e4e2ec29-AP1["**In-Memory Job Registry**<br>Tracks job status (queued, processing, etc.)<br>finJobRegistry|jobRegistry"] -->|"Has limitation"| e4e2ec29-HSL1["**In-memory Job Registries**<br>Not suitable for multi-instance deployments<br>finJobRegistry|jobRegistry"]
+            e4e2ec29-HSL2["**Duplicated Work / Inconsistent Status**<br>Consequence of in-memory state across instances<br>[External]"] -->|"Mitigated by"| e4e2ec29-FDC1["**Distributed Task Queue**<br>e.g., Redis, RabbitMQ<br>[Proposed]"]
+            e4e2ec29-HSL2["**Duplicated Work / Inconsistent Status**<br>Consequence of in-memory state across instances<br>[External]"] -->|"Mitigated by"| e4e2ec29-FDC2["**Distributed Cache / DB**<br>e.g., Redis, PostgreSQL advisory locks<br>[Proposed]"]
+        end
+        %% Edges at this level (grouped by source)
+        e4e2ec29-CP1["**In-Process Worker Functions**<br>Configurable concurrency within Node.js<br>DirectGeminiFileAttachmentService.ts"] -->|"Processes tasks concurrently"| e4e2ec29-BCF4["**Business Processes**<br>Core application logic<br>[External]"]
+        e4e2ec29-CP2["**Event Queuing and Batch Processing**<br>Asynchronous handling of user events<br>UserJourneyService.ts"] -->|"Manages high volume events for"| e4e2ec29-BCF4["**Business Processes**<br>Core application logic<br>[External]"]
+        e4e2ec29-DM1["**Polyglot Persistence**<br>PostgreSQL and MongoDB for different data types<br>[External]"] -->|"Leverages"| e4e2ec29-D1["**PostgreSQL**<br>Relational data<br>[Database]"]
+        e4e2ec29-DM1["**Polyglot Persistence**<br>PostgreSQL and MongoDB for different data types<br>[External]"] -->|"Leverages"| e4e2ec29-D2["**MongoDB**<br>Flexible document data<br>[Database]"]
+        e4e2ec29-DM2["**Prisma Migrations**<br>Database schema evolvability<br>[Tool]"] -->|"Supports"| e4e2ec29-D1["**PostgreSQL**<br>Relational data<br>[Database]"]
+        e4e2ec29-RS1["**Rate Limiting**<br>Protects API endpoints from abuse<br>express-rate-limit"] -->|"Protects"| e4e2ec29-BCF1["**API Services**<br>Exposes RESTful APIs<br>[External]"]
+        e4e2ec29-RS2["**Graceful Shutdown**<br>Ensures completion of ongoing ops<br>server.ts"] -->|"Applies to"| e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"]
+        e4e2ec29-RS3["**Comprehensive Security Middleware**<br>Helmet, input sanitization, NoSQL injection<br>[External]"] -->|"Enhances"| e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"]
+        e4e2ec29-MO1["**Metrics Collection**<br>Custom middlewares (countRequest, trackTime, logger)<br>[External]"] -->|"Feeds data to"| e4e2ec29-M1["**Monitoring Dashboard**<br>Real-time metrics visualization<br>[External]"]
+        e4e2ec29-MO1["**Metrics Collection**<br>Custom middlewares (countRequest, trackTime, logger)<br>[External]"] -->|"Collects from"| e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"]
+        e4e2ec29-DPP3["**AI Integration**<br>AI-driven analysis via Google Generative AI<br>[External]"] -->|"Leverages"| e4e2ec29-BT14["**@google/generative-ai**<br>AI-driven analysis<br>[External]"]
+        e4e2ec29-RJM1["**In-Memory Job Registry**<br>Tracks long-running analytical jobs<br>[External]"] -->|"Includes"| e4e2ec29-AP1["**In-Memory Job Registry**<br>Tracks job status (queued, processing, etc.)<br>finJobRegistry|jobRegistry"]
+        e4e2ec29-RJM1["**In-Memory Job Registry**<br>Tracks long-running analytical jobs<br>[External]"] -->|"Includes"| e4e2ec29-AP3["**Job Deduplication**<br>Prevents redundant processing<br>finJobKeyToId"]
+        e4e2ec29-RJM1["**In-Memory Job Registry**<br>Tracks long-running analytical jobs<br>[External]"] -->|"Part of"| e4e2ec29-BCF4["**Business Processes**<br>Core application logic<br>[External]"]
+        e4e2ec29-SSM1["**JWT-based CSRF Protection**<br>With token rotation<br>[External]"] -->|"Enhances"| e4e2ec29-BCF3["**Authentication/Authorization**<br>User access control<br>[External]"]
+        e4e2ec29-SSM1["**JWT-based CSRF Protection**<br>With token rotation<br>[External]"] -->|"Part of"| e4e2ec29-BCF3["**Authentication/Authorization**<br>User access control<br>[External]"]
+        e4e2ec29-SSM2["**Zero-Trust Payment Verification**<br>Server-side validation for PhonePe<br>[External]"] -->|"Applies to"| e4e2ec29-BT12["**PhonePe SDK**<br>Payment gateway integration<br>[External]"]
+        e4e2ec29-SSM2["**Zero-Trust Payment Verification**<br>Server-side validation for PhonePe<br>[External]"] -->|"Part of"| e4e2ec29-BCF4["**Business Processes**<br>Core application logic<br>[External]"]
+        e4e2ec29-EIC1["**Third-Party APIs**<br>SendGrid, PhonePe, Google Gemini<br>[External]"] -->|"Requires"| e4e2ec29-BCF5["**External Integrations**<br>Third-party service communication<br>[External]"]
+        e4e2ec29-EIC1["**Third-Party APIs**<br>SendGrid, PhonePe, Google Gemini<br>[External]"] -->|"Part of"| e4e2ec29-BCF5["**External Integrations**<br>Third-party service communication<br>[External]"]
+        e4e2ec29-Frontend["**Frontend**<br>User interface and user experience<br>[External]"] -->|"Exposes API to"| e4e2ec29-Backend["**Backend**<br>Core application logic, API services, data persistence<br>[External]"]
+        e4e2ec29-Backend["**Backend**<br>Core application logic, API services, data persistence<br>[External]"] -->|"Consumes API from"| e4e2ec29-Frontend["**Frontend**<br>User interface and user experience<br>[External]"]
+        e4e2ec29-Backend["**Backend**<br>Core application logic, API services, data persistence<br>[External]"] -->|"Monitored by"| e4e2ec29-Monitoring["**Monitoring**<br>Manages and monitors Node.js applications<br>[External]"]
+        e4e2ec29-Monitoring["**Monitoring**<br>Manages and monitors Node.js applications<br>[External]"] -->|"Manages processes of"| e4e2ec29-Backend["**Backend**<br>Core application logic, API services, data persistence<br>[External]"]
+        e4e2ec29-Monitoring["**Monitoring**<br>Manages and monitors Node.js applications<br>[External]"] -->|"Collects metrics from"| e4e2ec29-Backend["**Backend**<br>Core application logic, API services, data persistence<br>[External]"]
+        e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Handles long-running tasks via"| e4e2ec29-AP1["**In-Memory Job Registry**<br>Tracks job status (queued, processing, etc.)<br>finJobRegistry|jobRegistry"]
+        e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Processes events via"| e4e2ec29-CP2["**Event Queuing and Batch Processing**<br>Asynchronous handling of user events<br>UserJourneyService.ts"]
+        e4e2ec29-B1["**Node.js/Express.js Server**<br>RESTful API Services<br>[Server]"] -->|"Secured by"| e4e2ec29-RS3["**Comprehensive Security Middleware**<br>Helmet, input sanitization, NoSQL injection<br>[External]"]
+        e4e2ec29-AP1["**In-Memory Job Registry**<br>Tracks job status (queued, processing, etc.)<br>finJobRegistry|jobRegistry"] -->|"Provides status to"| e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"]
+        e4e2ec29-F1["**React SPA**<br>Single-Page Application<br>[Framework]"] -->|"Polls status from"| e4e2ec29-AP2["**Client Polling**<br>Status updates for long-running jobs<br>/jobs/:jobId/status"]
+        e4e2ec29-DPP1["**Dual Document Processing Modes**<br>Direct file vs. OCR-based<br>[External]"] -->|"Part of"| e4e2ec29-BCF4["**Business Processes**<br>Core application logic<br>[External]"]
+    end
+
+```
+---
+*Generated by [CodeViz.ai](https://codeviz.ai) on 10/3/2025, 7:49:10 PM*
